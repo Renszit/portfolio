@@ -1,12 +1,14 @@
+import Transition from "@/components/Transition";
 import MenuBar from "@/modules/MenuBar";
 
 const About = () => {
   return (
-    <div>
-      <MenuBar />
+    <Transition>
+      <div>
+        <MenuBar />
         <h1>About</h1>
-      
-    </div>
+      </div>
+    </Transition>
   );
 };
 

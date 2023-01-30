@@ -1,11 +1,14 @@
+import Transition from "@/components/Transition";
 import MenuBar from "@/modules/MenuBar";
 
 const Contact = () => {
   return (
-    <div>
-      <MenuBar />
-      <h1>Contact</h1>
-    </div>
+    <Transition>
+      <div className="page">
+        <MenuBar />
+        <h1>Contact</h1>
+      </div>
+    </Transition>
   );
 };
 
