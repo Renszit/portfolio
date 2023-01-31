@@ -4,7 +4,7 @@ import MenuBar from "@/modules/MenuBar";
 const Contact = () => {
   return (
     <Transition>
-      <div className="page">
+      <div>
         <MenuBar />
         <h1>Contact</h1>
       </div>

@@ -20,7 +20,7 @@ const Transition = ({ children }) => {
       initial={variants.out}
       animate={variants.in}
       exit={variants.out}
-      transition={{ type: "spring", stiffness: 180, damping: 20 }}
+      transition={{ type: "spring", stiffness: 150, damping: 20 }}
     >
       {children}
     </motion.div>
