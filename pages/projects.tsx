@@ -5,7 +5,6 @@ const Projects = () => {
   return (
     <Transition>
       <div className="page">
-        <MenuBar />
         <h1>Projects</h1>
       </div>
     </Transition>

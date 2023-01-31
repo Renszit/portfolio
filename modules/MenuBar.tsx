@@ -1,44 +1,69 @@
 import { Inter } from "@next/font/google";
 import styles from "@/styles/MenuBar.module.css";
 import { useRouter } from "next/router";
+import styled from "styled-components";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const Button = styled.button`
+  /* Adapt the colors based on primary prop */
+  background: ${(props) => (props.active ? "palevioletred" : "white")};
+  color: ${(props) => (props.active ? "white" : "palevioletred")};
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+
 const MenuBar = () => {
   const router = useRouter();
+  const [active, setActive] = useState("/");
 
   const handleClick = (route) => {
+    setActive(route);
     router.push(route);
   };
 
   return (
     <div className={styles.header}>
       <h1 className={styles.title}>
-        <button onClick={() => handleClick("/")}>Rens Pennings</button>
+        <Button active={active == "/"} onClick={() => handleClick("/")}>
+          Rens Pennings
+        </Button>
       </h1>
-      <button onClick={() => handleClick("/about")} className={styles.card}>
-        <h2 className={inter.className}>
-          About <span>-&gt;</span>
-        </h2>
-      </button>
+      <Button
+        active={active == "/about"}
+        onClick={() => handleClick("/about")}
+        className={styles.card}
+      >
+        About
+      </Button>
 
-      <button onClick={() => handleClick("/projects")} className={styles.card}>
-        <h2 className={inter.className}>
-          Projects <span>-&gt;</span>
-        </h2>
-      </button>
+      <Button
+        active={active == "/projects"}
+        onClick={() => handleClick("/projects")}
+        className={styles.card}
+      >
+        Projects
+      </Button>
 
-      <button onClick={() => handleClick("/resume")} className={styles.card}>
-        <h2 className={inter.className}>
-          Resume <span>-&gt;</span>
-        </h2>
-      </button>
+      <Button
+        active={active == "/resume"}
+        onClick={() => handleClick("/resume")}
+        className={styles.card}
+      >
+        Resume
+      </Button>
 
-      <button onClick={() => handleClick("/contact")} className={styles.card}>
-        <h2 className={inter.className}>
-          Contact <span>-&gt;</span>
-        </h2>
-      </button>
+      <Button
+        active={active == "/contact"}
+        onClick={() => handleClick("/contact")}
+        className={styles.card}
+      >
+        Contact
+      </Button>
     </div>
   );
 };

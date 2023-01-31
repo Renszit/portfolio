@@ -5,7 +5,6 @@ const Resume = () => {
   return (
     <Transition>
       <div className="page">
-        <MenuBar />
         <h1>Resume</h1>
       </div>
     </Transition>

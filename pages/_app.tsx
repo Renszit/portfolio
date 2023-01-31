@@ -12,6 +12,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       initial={false}
       onExitComplete={() => window.scrollTo(0, 0)}
     >
+      <MenuBar />
       <Component {...pageProps} key={router.asPath} />
     </AnimatePresence>
   );
